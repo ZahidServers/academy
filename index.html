@@ -1,0 +1,609 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <!-- Basic meta / SEO -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Webaon Academy — Industry-ready training & guaranteed internships</title>
+  <meta name="description" content="Webaon Academy: flexible live online courses, capstone projects, and guaranteed remote internships at Webaon & partners. Web Dev, DApps, RPA, TinyML, Cyber Security and more." />
+  <meta name="keywords" content="Webaon Academy, Web Development, Node.js, Python, PHP, Kotlin, RPA, TinyML, DApps, internships, online courses, guaranteed internship" />
+  <meta name="author" content="Webaon Academy" />
+  <link rel="canonical" href="https://academy.webaon.com/" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Webaon Academy — Industry-ready training & guaranteed internships" />
+  <meta property="og:description" content="Flexible live online courses with capstone projects and guaranteed remote internships at Webaon and partner companies." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://academy.webaon.com/" />
+  <meta property="og:image" content="https://academy.webaon.com/assets/academy-hero.jpg" />
+
+  <!-- Favicons placeholder -->
+  <link rel="icon" href="/favicon.ico" />
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- LIBRARIES (as you requested) -->
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
+  <!-- Swiper -->
+  <link href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" rel="stylesheet">
+  <!-- AOS -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+
+  <!-- JSON-LD Organization + Courses (brief) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "EducationalOrganization",
+    "name": "Webaon Academy",
+    "url": "https://academy.webaon.com",
+    "logo": "https://academy.webaon.com/webaon_academy_logo.png",
+    "sameAs": [
+      "https://www.linkedin.com/company/webaon",
+      "https://instagram.com/webaon_ltd"
+    ],
+    "contactPoint": [{
+      "@type":"ContactPoint",
+      "telephone":"+91-8369620428",
+      "contactType":"customer support",
+      "areaServed":"IN"
+    }]
+  }
+  </script>
+
+  <style>
+    :root{
+      --brand: #8B0000;
+      --muted: #6c757d;
+      --bg: #ffffff;
+      --fg: #0b1220;
+      --card: #ffffff;
+      --glass: rgba(255,255,255,0.6);
+      --radius: 1rem;
+      --maxwidth: 1200px;
+      font-family: 'Inter', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+    }
+
+    [data-bs-theme="dark"]{
+      --bg: #071018;
+      --fg: #e6eef8;
+      --card: #0d1722;
+      --glass: rgba(255,255,255,0.03);
+    }
+
+    html,body { height:100%; background:var(--bg); color:var(--fg); margin:0; }
+    .container-narrow{ max-width:var(--maxwidth); margin:0 auto; padding:0 1rem; }
+    .brand { color:var(--brand); font-weight:800; letter-spacing:.2px; }
+    .hero {
+      background: linear-gradient(90deg, rgba(139,0,0,0.06), transparent);
+      border-radius: calc(var(--radius) * .8);
+      box-shadow: 0 6px 30px rgba(11,17,24,0.04);
+      padding: 2rem;
+    }
+    .card { border: none; border-radius: .85rem; background: var(--card); box-shadow: 0 6px 20px rgba(11,17,24,0.04); }
+    .badge-price { background: rgba(139,0,0,0.07); color: var(--brand); padding: .4rem .6rem; font-weight:700; border-radius:.5rem; }
+    .theme-toggle { width:46px; height:46px; display:inline-flex; align-items:center; justify-content:center; border-radius:.75rem; border:1px solid rgba(0,0,0,0.05); }
+    .small-muted{ color:var(--muted); font-size:.95rem; }
+    a { text-decoration: none; }
+    .glass { background: var(--glass); border-radius:.7rem; padding:.6rem; }
+    .pill { padding: .3rem .6rem; border-radius: 999px; background: rgba(0,0,0,0.03); font-weight:600; color:var(--muted); }
+    footer { border-top: 1px solid rgba(0,0,0,0.04); padding-top:2rem; padding-bottom:2rem; margin-top:4rem; }
+    .course-grid .card { transition: transform .28s cubic-bezier(.2,.9,.4,1); }
+    .course-grid .card:hover { transform: translateY(-6px); }
+    @media (max-width: 780px) {
+      .hero { padding: 1.2rem; }
+      .desktop-only { display:none!important; }
+    }
+    /* focus states */
+    button:focus, a:focus, input:focus, select:focus { outline: 3px solid rgba(139,0,0,0.12); outline-offset: 3px; border-radius:8px; }
+  </style>
+</head>
+<body data-bs-theme="light">
+  <!-- Header -->
+  <header class="py-3">
+    <div class="container-narrow d-flex align-items-center justify-content-between">
+      <a class="d-flex align-items-center gap-3" href="/">
+        <img src="https://academy.webaon.com/webaon_academy_logo.png" alt="Webaon Academy logo" width="56" height="56" loading="lazy">
+        <div>
+          <div class="brand">Webaon Academy</div>
+          <div class="small-muted">Industry-backed training • Guaranteed internships</div>
+        </div>
+      </a>
+
+      <div class="d-flex align-items-center gap-2">
+        <nav class="me-3 d-none d-md-block">
+          <a class="small-muted me-3" href="#programs">Programs</a>
+          <a class="small-muted me-3" href="#how">How it Works</a>
+          <a class="small-muted me-3" href="#internship">Internships</a>
+          <a class="small-muted" href="#contact">Contact</a>
+        </nav>
+
+        <button id="themeToggle" class="btn theme-toggle" aria-label="Toggle theme" title="Toggle theme">
+          <i class="bi bi-moon-fill"></i>
+        </button>
+        <a href="#contact" class="btn btn-primary ms-2">Request Call Back</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main -->
+  <main>
+    <!-- Hero -->
+    <section class="container-narrow py-5">
+      <div class="row g-4 align-items-center">
+        <div class="col-lg-7">
+          <div class="hero">
+            <h1 class="display-6 mb-3">Learn by building — industry-ready programs with guaranteed remote internships</h1>
+            <p class="small-muted lead mb-4">Live online classes on Microsoft Teams / Zoom. Flexible pacing (choose hours per day). Capstone projects for each student. Certificates + Internship letters upon completion.</p>
+
+            <div class="d-flex gap-2 flex-wrap mb-3">
+              <a href="#programs" class="btn btn-primary btn-lg">View Programs</a>
+              <a href="#contact" class="btn btn-outline-secondary btn-lg">Request Call Back</a>
+              <a href="#internship" class="btn btn-link small-muted">Learn about internships →</a>
+            </div>
+
+            <div class="small-muted">
+              <strong>Device requirement:</strong> Laptop or desktop with stable internet. Classes recorded for learners who need catch-up.
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-5 desktop-only">
+          <div class="card p-3">
+            <img src="https://academy.webaon.com/assets/academy-hero.jpg" alt="Academy visual" class="img-fluid rounded" loading="lazy">
+            <div class="d-flex justify-content-between align-items-center mt-3">
+              <div>
+                <div class="fw-bold">Next Cohort</div>
+                <div class="small-muted">Batch 2025–2026 — Pre-register now</div>
+              </div>
+              <div class="text-end">
+                <div class="badge-price">From ₹2,000</div>
+                <div class="small-muted mt-1">Flexible pacing • Remote internships</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Programs Grid -->
+    <section id="programs" class="container-narrow py-5">
+      <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2 class="h4">Programs</h2>
+        <div class="small-muted">Filter: <span class="pill mx-1">All</span><span class="pill mx-1">Web Dev</span><span class="pill mx-1">Mobile</span><span class="pill mx-1">Automation</span><span class="pill mx-1">Blockchain</span><span class="pill mx-1">AI</span></div>
+      </div>
+
+      <div class="row course-grid g-4">
+        <!-- App Inventor -->
+        <div class="col-md-6 col-lg-4" data-aos="fade-up">
+          <article class="card h-100">
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">App Inventor <small class="text-muted">Kids (10–12)</small></h5>
+              <p class="small-muted mb-3">Intro to block-based mobile apps — fun projects for young learners.</p>
+              <ul class="small-muted mb-3">
+                <li>Age: 10–12</li>
+                <li>Format: Live online (recordings)</li>
+                <li>Projects + Capstone</li>
+              </ul>
+              <div class="mt-auto d-flex justify-content-between align-items-center">
+                <span class="badge-price">₹2,000</span>
+                <a class="btn btn-outline-primary btn-sm" href="#contact">Request Info</a>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- Web Development PHP -->
+        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="40">
+          <article class="card h-100">
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">Web Development (PHP)</h5>
+              <p class="small-muted mb-2">PHP & Laravel, MySQL, MongoDB, Docker, Git, HTML/CSS/JS, Bootstrap 5 & deployment.</p>
+              <div class="small-muted mb-3">Includes Postman, jQuery, Three.js intro, GitHub workflow and capstone project.</div>
+              <div class="mt-auto d-flex justify-content-between align-items-center">
+                <span class="badge-price">₹15,000</span>
+                <a class="btn btn-outline-primary btn-sm" href="#contact">Details</a>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- Web Development Python -->
+        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="80">
+          <article class="card h-100">
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">Web Development (Python)</h5>
+              <p class="small-muted mb-2">Django/Flask, REST APIs, PostgreSQL/MySQL, Docker, Git, HTML/CSS/JS, Bootstrap 5.</p>
+              <div class="small-muted mb-3">Covers MongoDB, Postman, Docker, Three.js intro, GitHub & deployment workflows.</div>
+              <div class="mt-auto d-flex justify-content-between align-items-center">
+                <span class="badge-price">₹25,000</span>
+                <a class="btn btn-outline-primary btn-sm" href="#contact">Details</a>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- Web Development Node.js -->
+        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="120">
+          <article class="card h-100">
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">Web Development (Node.js)</h5>
+              <p class="small-muted mb-2">Express, Node.js, MongoDB/Postgres, Docker, Git, modern JS tooling & deployment.</p>
+              <div class="small-muted mb-3">Includes Postman, Docker, HTML/CSS/JS, Bootstrap 5, GitHub, Three.js basics.</div>
+              <div class="mt-auto d-flex justify-content-between align-items-center">
+                <span class="badge-price">₹25,000</span>
+                <a class="btn btn-outline-primary btn-sm" href="#contact">Details</a>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- WordPress Theme Development -->
+        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="160">
+          <article class="card h-100">
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">WordPress Theme Development</h5>
+              <p class="small-muted mb-2">Gutenberg, custom themes, hooks, security-hardening, performance & WooCommerce basics.</p>
+              <div class="mt-auto d-flex justify-content-between align-items-center">
+                <span class="badge-price">₹30,000</span>
+                <a class="btn btn-outline-primary btn-sm" href="#contact">Apply</a>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- Kotlin App Development -->
+        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+          <article class="card h-100">
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">Kotlin App Development</h5>
+              <p class="small-muted mb-2">Jetpack Compose, Android architecture, testing, publishing & native app best practices.</p>
+              <div class="mt-auto d-flex justify-content-between align-items-center">
+                <span class="badge-price">₹30,000</span>
+                <a class="btn btn-outline-primary btn-sm" href="#contact">Apply</a>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- RPA (UiPath + Selenium) -->
+        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="240">
+          <article class="card h-100">
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">Robotic Process Automation (RPA)</h5>
+              <p class="small-muted mb-2">UiPath fundamentals + Selenium for browser automation, orchestration, and best-practices.</p>
+              <div class="small-muted mb-3">Includes workflow design, bots, testing & deployment to cloud workers.</div>
+              <div class="mt-auto d-flex justify-content-between align-items-center">
+                <span class="badge-price">₹35,000</span>
+                <a class="btn btn-outline-primary btn-sm" href="#contact">Details</a>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- TinyML -->
+        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="280">
+          <article class="card h-100">
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">TinyML</h5>
+              <p class="small-muted mb-2">Embedded ML on microcontrollers, TensorFlow Lite for Microcontrollers, edge-model deployment.</p>
+              <div class="small-muted mb-3">Hardware labs (remote guidance), model optimization & capstone.</div>
+              <div class="mt-auto d-flex justify-content-between align-items-center">
+                <span class="badge-price">₹65,000</span>
+                <a class="btn btn-outline-primary btn-sm" href="#contact">Apply</a>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- DApps Development -->
+        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="320">
+          <article class="card h-100">
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">DApps Development</h5>
+              <p class="small-muted mb-2">Ethereum smart contracts, ethers.js, front-end integration, MetaMask, testing & deployment.</p>
+              <div class="small-muted mb-3">Includes solidity tutorials, unit testing and deployment patterns.</div>
+              <div class="mt-auto d-flex justify-content-between align-items-center">
+                <span class="badge-price">₹40,000 <small class="text-muted">est.</small></span>
+                <a class="btn btn-outline-primary btn-sm" href="#contact">Details</a>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- Game Dev - Coming Soon -->
+        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="360">
+          <article class="card h-100">
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">Game Development (Unreal) <span class="small-muted">Coming Soon</span></h5>
+              <p class="small-muted mb-2">Full Unreal Engine pipeline — 3D, physics, networking & packaging. Pre-register for priority access.</p>
+              <div class="mt-auto d-flex justify-content-between align-items-center">
+                <span class="coming-soon">Pre-register</span>
+                <a class="btn btn-outline-primary btn-sm" href="#contact">Pre-register</a>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- Cyber Security - Coming Soon -->
+        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="400">
+          <article class="card h-100">
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">Cyber Security <span class="small-muted">Coming Soon</span></h5>
+              <p class="small-muted mb-2">Network security, web app security, pentesting workflows, and secure DevOps practices.</p>
+              <div class="mt-auto d-flex justify-content-between align-items-center">
+                <span class="coming-soon">Coming soon</span>
+                <a class="btn btn-outline-primary btn-sm" href="#contact">Notify me</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- How it Works -->
+    <section id="how" class="container-narrow py-5">
+      <div class="row align-items-center">
+        <div class="col-lg-6" data-aos="fade-right">
+          <h3>How Webaon Academy works</h3>
+          <ol class="small-muted">
+            <li><strong>Apply & Enroll:</strong> Choose your program and submit details. Flexible start dates.</li>
+            <li><strong>Live classes:</strong> Weekly live sessions on MS Teams / Zoom. Students choose their daily commitment.</li>
+            <li><strong>Projects & Capstone:</strong> Multiple projects and a final capstone evaluated by your instructor.</li>
+            <li><strong>Certificates:</strong> Completion, Attendance & Capstone certificates after course completion.</li>
+            <li><strong>Guaranteed Internship:</strong> Remote internships at Webaon / sister / partner companies. Internships are flexible — students may choose role or skip.</li>
+            <li><strong>Letters & Performance Certs:</strong> On internship completion students receive LOR & performance certificate.</li>
+          </ol>
+        </div>
+        <div class="col-lg-6" data-aos="fade-left">
+          <div class="card p-3">
+            <h6 class="mb-2">Delivery model</h6>
+            <p class="small-muted">Live sessions (MS Teams / Zoom), recordings available, 1:1 instructor capstone review, GitHub project portfolio for every student.</p>
+            <h6 class="mt-3 mb-2">Stack common to Web Dev courses</h6>
+            <p class="small-muted">MySQL, MongoDB, Postman, Docker, HTML/CSS/SCSS, JavaScript, jQuery, Bootstrap 5, Three.js (intro), Anime.js, Git & GitHub.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Internship section -->
+    <section id="internship" class="container-narrow py-5">
+      <h3 class="mb-3">Internship Pathway</h3>
+      <div class="row g-4">
+        <div class="col-md-6" data-aos="fade-up">
+          <div class="card p-3">
+            <h5>Guaranteed remote internships</h5>
+            <p class="small-muted">Placements at Webaon, subsidiaries, sister companies or partner firms. Roles may vary — we prioritize alignment with student skills but offer flexibility.</p>
+            <ul class="small-muted">
+              <li>Remote & flexible schedules</li>
+              <li>Multiple roles available (dev, QA, infra, marketing tech)</li>
+              <li>Students can choose or skip internship; eligibility T&Cs apply</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="col-md-6" data-aos="fade-up" data-aos-delay="40">
+          <div class="card p-3">
+            <h5>Certificates on completion</h5>
+            <p class="small-muted">Course Completion, Attendance, Capstone Certificate. If internship completed: Internship Completion Certificate, Letter of Recommendation & Performance Certificate.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Partners / Testimonials (Swiper) -->
+    <section class="container-narrow py-5">
+      <h3 class="mb-3">Our partners & alumni</h3>
+      <div class="swiper-container" data-aos="fade-up">
+        <div class="swiper-wrapper">
+          <!-- Replace these with real partner logos -->
+          <div class="swiper-slide card p-3 d-flex align-items-center justify-content-center"><img src="https://via.placeholder.com/140x60?text=Partner+1" alt="Partner 1" loading="lazy"></div>
+          <div class="swiper-slide card p-3 d-flex align-items-center justify-content-center"><img src="https://via.placeholder.com/140x60?text=Partner+2" alt="Partner 2" loading="lazy"></div>
+          <div class="swiper-slide card p-3 d-flex align-items-center justify-content-center"><img src="https://via.placeholder.com/140x60?text=Partner+3" alt="Partner 3" loading="lazy"></div>
+          <div class="swiper-slide card p-3 d-flex align-items-center justify-content-center"><img src="https://via.placeholder.com/140x60?text=Partner+4" alt="Partner 4" loading="lazy"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Lead capture (SheetMonkey) -->
+    <section id="contact" class="container-narrow py-5">
+      <div class="row g-4 align-items-center">
+        <div class="col-lg-5" data-aos="fade-right">
+          <h3>Request a call back / Leave your details</h3>
+          <p class="small-muted">Our admissions team will contact you. Please include your preferred contact time. You can also request program brochures or a free counselling call.</p>
+
+          <ul class="small-muted">
+            <li><strong>Email:</strong> info@webaon.com</li>
+            <li><strong>Phone:</strong> +91-8369620428</li>
+          </ul>
+        </div>
+
+        <div class="col-lg-7" data-aos="fade-left">
+          <!-- Sheetmonkey form integration -->
+          <!-- Replace YOUR_FORM_ID with your real SheetMonkey form id -->
+          <form id="leadForm" action="https://api.sheetmonkey.io/form/YOUR_FORM_ID" method="post" class="card p-4">
+            <div class="row g-3">
+              <div class="col-md-6">
+                <label class="form-label">Full name</label>
+                <input name="name" type="text" class="form-control" placeholder="Your full name" required>
+              </div>
+              <div class="col-md-6">
+                <label class="form-label">Email</label>
+                <input name="email" type="email" class="form-control" placeholder="you@example.com" required>
+              </div>
+              <div class="col-md-6">
+                <label class="form-label">Phone</label>
+                <input name="phone" type="tel" class="form-control" placeholder="+91 9XXXXXXXXX" required>
+              </div>
+              <div class="col-md-6">
+                <label class="form-label">Course interested in</label>
+                <select name="course" class="form-select">
+                  <option>App Inventor</option>
+                  <option>Web Dev (PHP)</option>
+                  <option>Web Dev (Python)</option>
+                  <option>Web Dev (Node.js)</option>
+                  <option>WordPress Theme Development</option>
+                  <option>Kotlin App Development</option>
+                  <option>RPA</option>
+                  <option>DApps Development</option>
+                  <option>TinyML</option>
+                  <option>Cyber Security</option>
+                  <option>Game Development (Unreal)</option>
+                </select>
+              </div>
+
+              <div class="col-md-12">
+                <label class="form-label">Preferred contact time (optional)</label>
+                <input name="contact_time" type="text" class="form-control" placeholder="e.g. Weekdays 6–8 PM IST">
+              </div>
+
+              <div class="col-12 d-flex gap-2">
+                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="button" id="formReset" class="btn btn-outline-secondary">Reset</button>
+                <div id="formMsg" class="ms-3 align-self-center small-muted"></div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="container-narrow">
+    <div class="row">
+      <div class="col-md-4">
+        <img src="https://academy.webaon.com/webaon_academy_logo.png" alt="Webaon Academy" width="64" height="64" loading="lazy">
+        <div class="brand mt-2">Webaon Academy</div>
+        <div class="small-muted mt-2">Live, flexible, industry-aligned training with guaranteed internships.</div>
+      </div>
+
+      <div class="col-md-4">
+        <h6>Quick links</h6>
+        <ul class="list-unstyled small-muted">
+          <li><a href="#programs">Programs</a></li>
+          <li><a href="#how">How it works</a></li>
+          <li><a href="#internship">Internships</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="col-md-4">
+        <h6>Contact</h6>
+        <p class="small-muted mb-1"><strong>Email:</strong> info@webaon.com</p>
+        <p class="small-muted"><strong>Phone:</strong> +91-8369620428</p>
+        <div class="d-flex gap-2 mt-2">
+          <a class="small-muted" href="#"><i class="fab fa-linkedin fa-lg"></i></a>
+          <a class="small-muted" href="#"><i class="fab fa-instagram fa-lg"></i></a>
+          <a class="small-muted" href="#"><i class="fab fa-youtube fa-lg"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="text-center small-muted mt-4">© <span id="year"></span> Webaon Academy — academy.webaon.com • All rights reserved.</div>
+  </footer>
+
+  <!-- SCRIPTS (libraries you asked) -->
+  <!-- Three.js + GLTFLoader (kept even if not used directly now) -->
+  <script src="https://unpkg.com/three@0.128.0/build/three.min.js"></script>
+  <script src="https://unpkg.com/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
+
+  <!-- Bootstrap JS bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Swiper -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <!-- AOS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <!-- Anime.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+  <!-- Hammer.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script>
+
+  <script>
+    // Basic initialization
+    document.getElementById('year').textContent = new Date().getFullYear();
+    AOS.init({ once: true, duration: 700 });
+
+    // Theme toggle (data-bs-theme)
+    const themeToggle = document.getElementById('themeToggle');
+    const htmlEl = document.documentElement;
+    // Persist in localStorage
+    const savedTheme = localStorage.getItem('webaon_theme') || 'light';
+    htmlEl.setAttribute('data-bs-theme', savedTheme);
+    themeToggle.innerHTML = savedTheme === 'dark' ? '<i class="bi bi-sun-fill"></i>' : '<i class="bi bi-moon-fill"></i>';
+
+    themeToggle.addEventListener('click', () => {
+      const current = htmlEl.getAttribute('data-bs-theme') === 'dark' ? 'dark' : 'light';
+      const next = current === 'dark' ? 'light' : 'dark';
+      htmlEl.setAttribute('data-bs-theme', next);
+      localStorage.setItem('webaon_theme', next);
+      themeToggle.innerHTML = next === 'dark' ? '<i class="bi bi-sun-fill"></i>' : '<i class="bi bi-moon-fill"></i>';
+    });
+
+    // Swiper initialization (partners)
+    const swiper = new Swiper('.swiper-container', {
+      slidesPerView: 3,
+      spaceBetween: 20,
+      loop: true,
+      autoplay: { delay: 2800, disableOnInteraction: false },
+      breakpoints: {
+        0: { slidesPerView: 1 },
+        576: { slidesPerView: 2 },
+        992: { slidesPerView: 3 }
+      }
+    });
+
+    // Form handling: Submit to SheetMonkey (action attribute already set)
+    const leadForm = document.getElementById('leadForm');
+    const formMsg = document.getElementById('formMsg');
+    const formReset = document.getElementById('formReset');
+
+    leadForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      formMsg.textContent = 'Submitting...';
+      const formData = new FormData(leadForm);
+      try {
+        const res = await fetch(leadForm.action, { method: 'POST', body: formData });
+        if (res.ok) {
+          formMsg.textContent = 'Thanks — we will contact you soon.';
+          leadForm.reset();
+        } else {
+          formMsg.textContent = 'Submission failed. Please try again or email info@webaon.com';
+        }
+      } catch (err) {
+        console.error(err);
+        formMsg.textContent = 'Network error. Please try again later.';
+      }
+    });
+
+    formReset.addEventListener('click', () => {
+      leadForm.reset();
+      formMsg.textContent = '';
+    });
+
+    // Lightweight accessibility/keyboard support for course cards (enter to click)
+    document.querySelectorAll('.course-grid .card').forEach(card => {
+      card.setAttribute('tabindex','0');
+      card.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') { card.querySelector('a')?.click(); }
+      });
+    });
+
+    // Optional: lightweight animation for hero CTA using anime.js
+    anime({
+      targets: '.hero .btn-primary',
+      translateY: [-6,0],
+      duration: 1600,
+      easing: 'easeOutElastic(1, .6)',
+      loop: false
+    });
+  </script>
+</body>
+</html>
