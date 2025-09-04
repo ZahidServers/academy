@@ -105,7 +105,7 @@
     a { text-decoration: none; }
     .glass { background: var(--glass); border-radius:.7rem; padding:.6rem; }
     .pill { padding: .3rem .6rem; border-radius: 999px; background: rgba(0,0,0,0.03); font-weight:600; color:var(--muted); }
-    footer { border-top: 1px solid rgba(0,0,0,0.04); padding-top:2rem; padding-bottom:2rem; margin-top:4rem; }
+    footer { border-top: 1px solid rgba(0, 0, 0, 0.04); padding-top:2rem; padding-bottom:2rem; margin-top:4rem; }
     .course-grid .card { transition: transform .28s cubic-bezier(.2,.9,.4,1); }
     .course-grid .card:hover { transform: translateY(-6px); }
     @media (max-width: 780px) {
@@ -113,7 +113,7 @@
       .desktop-only { display:none!important; }
     }
     /* focus states */
-    button:focus, a:focus, input:focus, select:focus { outline: 3px solid rgba(139,0,0,0.12); outline-offset: 3px; border-radius:8px; }
+    button:focus, a:focus, input:focus, select:focus { outline: 3px solid rgba(0, 56, 139, 0.12); outline-offset: 3px; border-radius:8px; }
     .navbar {
   background: transparent;
   transition: background-color .3s ease, box-shadow .3s ease;
@@ -129,6 +129,7 @@
   font-weight: 500;
   transition: color .3s ease;
 }
+.nav-link{position: relative;padding-bottom: 4px;margin-right: 2px;}
 
 .navbar.scrolled .nav-link,
 .navbar.scrolled .navbar-brand {
@@ -146,11 +147,31 @@
   position: absolute;
   left: 0;
   bottom: 0;
-  height: 2px;
+  height: 4px;
   width: 0%;
   background: linear-gradient(90deg, var(--primary), var(--accent));
   transition: width 0.3s ease;
+  border-radius:20px;
 }
+@media (max-width: 340px) {
+  .navbar-brand img {
+    height: 48px;
+  }
+}
+@media (max-width: 315px) {
+  .navbar-brand img {
+    height: 38px;
+  }
+}
+@media (max-width: 305px) {
+  .navbar-brand img {
+    height: 28px;
+  }
+}
+.container-narrow::-webkit-scrollbar {
+display: none;
+}
+.decor-underline{display:inline-block;height:8px;width:64px;border-radius:8px;background:linear-gradient(90deg,var(--primary),var(--accent));vertical-align:middle;margin-left:12px}
   </style>
   <script>
 document.addEventListener("scroll", function () {
@@ -161,15 +182,16 @@ document.addEventListener("scroll", function () {
     nav.classList.remove("scrolled");
   }
 });
+
 </script>
 
 </head>
-<body data-bs-theme="light">
+<body data-bs-theme="light"  style="width: 100%; overflow-x: hidden;">
   <!-- Header -->
   <!-- Navbar -->
 <nav class="navbar navbar-expand-lg fixed-top navbar-light py-3">
   <div class="container">
-    <a class="navbar-brand d-flex align-items-center gap-2" href="#">
+    <a class="navbar-brand d-flex align-items-center gap-2" href="#top">
       <img src="https://academy.webaon.com/webaon_academy_logo_just.png" alt="Webaon Academy logo" height="72">
       <span class="fw-bold">Webaon Academy</span>
     </a>
@@ -193,7 +215,7 @@ document.addEventListener("scroll", function () {
   </div>
 </nav>
   <!-- Main -->
-  <main  style="background-image: url(https://academy.webaon.com/bg1_academy_webaon.png); background-repeat: no-repeat;">
+  <main id="top" style="background-image: url(https://academy.webaon.com/bg1_academy_webaon.png); background-repeat: no-repeat;">
     <br><br><br><br><br><br><br><br>
     <!-- Hero -->
     <section class="container-narrow py-5">
@@ -234,12 +256,19 @@ document.addEventListener("scroll", function () {
     </section>
     <br><br><br><br><br><br><br><br><br><br><br><br>
     <!-- Programs Grid -->
-    <section id="programs" class="container-narrow py-5">
-      <div class="d-flex justify-content-between align-items-center mb-4">
-        <h2 class="h4">Programs</h2>
-        <div class="small-muted">Filter: <span class="pill mx-1">All</span><span class="pill mx-1">Web Dev</span><span class="pill mx-1">Mobile</span><span class="pill mx-1">Automation</span><span class="pill mx-1">Blockchain</span><span class="pill mx-1">AI</span></div>
-      </div>
-
+    <section id="programs" class="container-narrow py-5"  style="overflow-x: hidden; -ms-overflow-style: none; scrollbar-width: none;">
+        <div class="program-header d-flex flex-wrap justify-content-between align-items-center mb-4">
+            <h2 class="h4 mb-2 mb-md-0">Programs <span class="decor-underline"></span></h2>
+            <div class="small-muted filter-pills d-flex flex-wrap gap-2">
+              <span class="pill">All</span>
+              <span class="pill">Web Dev</span>
+              <span class="pill">Mobile</span>
+              <span class="pill">Automation</span>
+              <span class="pill">Blockchain</span>
+              <span class="pill">AI</span>
+            </div>
+          </div>
+          
       <div class="row course-grid g-4">
         <!-- App Inventor -->
         <div class="col-md-6 col-lg-4" data-aos="fade-up">
@@ -409,10 +438,10 @@ document.addEventListener("scroll", function () {
     </section>
 
     <!-- How it Works -->
-    <section id="how" class="container-narrow py-5">
+    <section id="how" class="container-narrow py-5"  style="overflow-x: hidden; -ms-overflow-style: none; scrollbar-width: none;">
       <div class="row align-items-center">
         <div class="col-lg-6" data-aos="fade-right">
-          <h3>How Webaon Academy works</h3>
+          <h3>How Webaon Academy works <span class="decor-underline"></span></h3>
           <ol class="small-muted">
             <li><strong>Apply & Enroll:</strong> Choose your program and submit details. Flexible start dates.</li>
             <li><strong>Live classes:</strong> Weekly live sessions on MS Teams / Zoom. Students choose their daily commitment.</li>
@@ -434,8 +463,8 @@ document.addEventListener("scroll", function () {
     </section>
 
     <!-- Internship section -->
-    <section id="internship" class="container-narrow py-5">
-      <h3 style="color: var(--bs-card-title-color1);" class="mb-3">Internship Pathway</h3>
+    <section id="internship" class="container-narrow py-5"  style="overflow-x: hidden; -ms-overflow-style: none; scrollbar-width: none;">
+      <h3 style="color: var(--bs-card-title-color1);" class="mb-3">Internship Pathway <span class="decor-underline"></span></h3>
       <div class="row g-4">
         <div class="col-md-6" data-aos="fade-up">
           <div class="card p-3">
@@ -459,8 +488,8 @@ document.addEventListener("scroll", function () {
     </section>
 
     <!-- Partners (Swiper) -->
-    <section class="container-narrow py-5">
-      <h3 class="mb-3">Our Internships Partners</h3>
+    <section style="overflow-x: hidden; -ms-overflow-style: none; scrollbar-width: none;" class="container-narrow py-5">
+      <h3 class="mb-3">Our Internships Partners <span class="decor-underline"></span></h3>
       <div class="swiper-container" data-aos="fade-up">
         <div class="swiper-wrapper">
           <!-- Replace these with real partner logos -->
@@ -474,8 +503,8 @@ document.addEventListener("scroll", function () {
     </section>
 
     <!--  Testimonials (Swiper) -->
-    <section class="container-narrow py-5">
-        <h3 class="mb-3">Our Alumni</h3>
+    <section style="overflow-x: hidden; -ms-overflow-style: none; scrollbar-width: none;" class="container-narrow py-5">
+        <h3 class="mb-3">Our Alumni <span class="decor-underline"></span></h3>
         <div class="swiper-container" data-aos="fade-up">
         <div class="swiper-wrapper">
             <!-- Replace these with real partner logos -->
@@ -488,10 +517,10 @@ document.addEventListener("scroll", function () {
     </section>
 
     <!-- Lead capture (SheetMonkey) -->
-    <section id="contact" class="container-narrow py-5">
+    <section id="contact" class="container-narrow py-5" style="overflow-x: hidden; -ms-overflow-style: none; scrollbar-width: none;">
       <div class="row g-4 align-items-center">
         <div class="col-lg-5" data-aos="fade-right">
-          <h3>Request a call back / Leave your details</h3>
+          <h3>Request a call back / Leave your details <span class="decor-underline"></span></h3>
           <p class="small-muted">Our admissions team will contact you. Please include your preferred contact time. You can also request program brochures or a free counselling call.</p>
 
           <ul class="small-muted">
@@ -507,19 +536,19 @@ document.addEventListener("scroll", function () {
             <div class="row g-3">
               <div class="col-md-6">
                 <label class="form-label">Full name</label>
-                <input name="name" type="text" class="form-control" placeholder="Your full name" required>
+                <input name="name" type="text" class="form-control" placeholder="Your full name" autocomplete="name" required>
               </div>
               <div class="col-md-6">
                 <label class="form-label">Email</label>
-                <input name="email" type="email" class="form-control" placeholder="you@example.com" required>
+                <input name="email" type="email" class="form-control" placeholder="you@example.com" autocomplete="email" required>
               </div>
               <div class="col-md-6">
                 <label class="form-label">Phone</label>
-                <input name="phone" type="tel" class="form-control" placeholder="+91 9XXXXXXXXX" required>
+                <input name="phone" type="tel" class="form-control" placeholder="+91 9XXXXXXXXX" autocomplete="mobile" required>
               </div>
               <div class="col-md-6">
                 <label class="form-label">Course interested in</label>
-                <select name="course" class="form-select">
+                <select name="course" title="Select Course to Inquire" class="form-select">
                   <option>App Inventor</option>
                   <option>Web Dev (PHP)</option>
                   <option>Web Dev (Python)</option>
@@ -547,12 +576,12 @@ document.addEventListener("scroll", function () {
             </div>
           </form>
         </div>
-      </div>
+      </div><br><br><br><br>
     </section>
   </main>
 
   <!-- Footer -->
-  <footer class="container-narrow">
+  <footer class="container-narrow"><br><br><br><br>
     <div class="row">
       <div class="col-md-4">
         <img src="https://academy.webaon.com/webaon_academy_logo.png" alt="Webaon Academy" height="64" loading="lazy">
@@ -563,10 +592,10 @@ document.addEventListener("scroll", function () {
       <div class="col-md-4">
         <h6>Quick links</h6>
         <ul class="list-unstyled small-muted">
-          <li><a href="#programs">Programs</a></li>
-          <li><a href="#how">How it works</a></li>
-          <li><a href="#internship">Internships</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li><a href="#programs" title="Programs/Courses">Programs</a></li>
+          <li><a href="#how" title="Our Programs Working">How it works</a></li>
+          <li><a href="#internship" title="Internships Offered at">Internships</a></li>
+          <li><a href="#contact" title="Contact Us">Contact</a></li>
         </ul>
       </div>
 
@@ -575,16 +604,17 @@ document.addEventListener("scroll", function () {
         <p class="small-muted mb-1"><strong>Email:</strong> info@webaon.com</p>
         <p class="small-muted"><strong>Phone:</strong> +91-8369620428</p>
         <div class="d-flex gap-2 mt-2">
-          <a class="small-muted" href="#"><i class="fab fa-linkedin fa-lg"></i></a>
-          <a class="small-muted" href="#"><i class="fab fa-instagram fa-lg"></i></a>
-          <a class="small-muted" href="#"><i class="fab fa-youtube fa-lg"></i></a>
+          <a class="small-muted"  title="linkedin" href="#"><i class="fab fa-linkedin fa-lg"></i></a>
+          <a class="small-muted" title="instagram" href="#"><i class="fab fa-instagram fa-lg"></i></a>
+          <a class="small-muted" title="YouTube" href="#"><i class="fab fa-youtube fa-lg"></i></a>
         </div>
       </div>
     </div>
 
     <div class="text-center small-muted mt-4">© <span id="year"></span> Webaon Academy — academy.webaon.com • All rights reserved.</div>
+    <br><br><br><br><br><br>
   </footer>
-
+  <div id="logomotion" style="position:fixed;bottom:0;left:1px;width: 70px;height: 70px; z-index: 996;"></div>
   <!-- SCRIPTS (libraries you asked) -->
   <!-- Three.js + GLTFLoader (kept even if not used directly now) -->
   <script src="https://unpkg.com/three@0.128.0/build/three.min.js"></script>
@@ -604,7 +634,7 @@ document.addEventListener("scroll", function () {
   <script>
     // Basic initialization
     document.getElementById('year').textContent = new Date().getFullYear();
-    AOS.init({ once: true, duration: 700 });
+    AOS.init({ once: false, duration: 700 });
 
     // Theme toggle (data-bs-theme)
     const themeToggle = document.getElementById('themeToggle');
@@ -717,6 +747,126 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
   });
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+  const scene = new THREE.Scene();
+  const camera = new THREE.PerspectiveCamera(45, 70 / 70, 0.1, 100);
+  camera.position.z = 2;
+
+  const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+  renderer.setSize(70, 70);
+  renderer.setPixelRatio(window.devicePixelRatio);
+  document.getElementById("logomotion").appendChild(renderer.domElement);
+
+  const light = new THREE.HemisphereLight(0xffffff, 0x444444, 1);
+  scene.add(light);
+
+  const loader = new THREE.GLTFLoader();
+  const clock = new THREE.Clock();
+
+  loader.load("https://academy.webaon.com/webaonacademy.glb", function (gltf) {
+    const model = gltf.scene;
+    model.scale.set(4, 4, 4);
+
+    // Compute center and reposition model
+    const box = new THREE.Box3().setFromObject(model);
+    const center = box.getCenter(new THREE.Vector3());
+    model.position.sub(center); // Move model so its center is at origin
+
+    // Create a pivot and add model to it
+    const pivot = new THREE.Object3D();
+    pivot.add(model);
+    scene.add(pivot);
+
+    function animate() {
+      requestAnimationFrame(animate);
+      const elapsed = clock.getElapsedTime();
+      pivot.rotation.y = elapsed * 0.2; // Smooth 360° rotation
+      renderer.render(scene, camera);
+    }
+
+    animate();
+  }, undefined, function (error) {
+    console.error("GLB load error:", error);
+  });
+});
+/* ---------- Anime.js micro-animations ---------- */
+document.addEventListener('DOMContentLoaded', function(){
+  // underline grow
+  document.querySelectorAll('.decor-underline').forEach((el, i) => {
+    el.style.width = '0px';
+    anime({ targets: el, width: ['0px','64px'], duration: 900, delay: 180 + i*60, easing: 'easeOutQuad' });
+  });
+  // CTA gentle loop
+  anime({ targets: '[data-anim="cta"]', scale: [1, 1.02, 1], duration: 2000, easing: 'easeInOutSine', loop: true });
+
+  // number counters (if any .count-up elements appear later)
+  document.querySelectorAll('[data-count]').forEach(el=>{
+    const end = parseInt(el.getAttribute('data-count'),10)||0;
+    anime({ targets: {val:0}, val: end, duration: 1500, round: 1, easing:'easeOutCubic',
+      update: a => el.textContent = a.animations[0].currentValue
+    });
+  });
+  let lastScrollY = window.scrollY;
+  let scrollDirection = 'down';
+
+  window.addEventListener('scroll', () => {
+    const currentY = window.scrollY;
+    scrollDirection = currentY > lastScrollY ? 'down' : 'up';
+    lastScrollY = currentY;
+  });
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      const el = entry.target;
+      if (entry.isIntersecting) {
+        el.dataset.visible = 'true';
+el.style.opacity = 1;
+el.style.transform = 'translateY(0)';
+
+        // Underline animation
+        if (el.classList.contains('decor-underline') && !el.dataset.animated) {
+          el.dataset.animated = 'true';
+          anime({ targets: el, width: ['0px','64px'], duration: 900, easing: 'easeOutQuad' });
+        }
+
+        // Counter animation
+        if (el.hasAttribute('data-count') && !el.dataset.animated) {
+          el.dataset.animated = 'true';
+          const end = parseInt(el.getAttribute('data-count'),10)||0;
+          anime({ targets: {val:0}, val: end, duration: 1500, round: 1, easing:'easeOutCubic',
+            update: a => el.textContent = a.animations[0].currentValue
+          });
+        }
+      }else {
+  if (scrollDirection === 'up' && el.dataset.visible === 'true') {
+    el.dataset.visible = 'false';
+    el.dataset.animated = '';
+
+    // Reset styles so they can animate again
+    if (el.classList.contains('decor-underline')) {
+      el.style.width = '0px';
+    }
+    if (el.hasAttribute('data-count')) {
+      el.textContent = '0';
+    }
+
+    anime({
+      targets: el,
+      opacity: [1, 0],
+      translateY: [0, -20],
+      duration: 600,
+      easing: 'easeOutQuad'
+    });
+  }
+}
+
+    });
+  }, { threshold: 0.6 }); // Trigger when 60% visible
+  document.querySelectorAll('.decor-underline, [data-count]').forEach(el => observer.observe(el));
+  anime({ targets: '[data-anim="cta"]', scale: [1, 1.02, 1], duration: 2000, easing: 'easeInOutSine', loop: true });
+  anime.remove(el);
 });
   </script>
 </body>
