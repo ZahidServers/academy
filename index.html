@@ -60,11 +60,14 @@
     :root{
       --brand: #00358b;
       --text:#132029;
+      --textop:#dbeff3;
       --muted: #6c757d;
       --bg: #ffffff;
       --fg: #0b1220;
       --card: #ffffff;
       --glass: rgba(255,255,255,0.6);
+      --primary:#2bd1dd;
+      --accent:#44e0b8;
       --radius: 1rem;
       --maxwidth: 1200px;
       font-family: 'Inter', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
@@ -79,6 +82,7 @@
       --card: #0d1722;
       --glass: rgba(255,255,255,0.03);
       --text:#dbeff3;
+      --textop:#132029;
       --bs-card-title-color1:#fff;
     }
 
@@ -87,11 +91,13 @@
     .brand { color:var(--text); font-weight:800; letter-spacing:.2px; }
     .navbar-brand { color:var(--text);}
     .hero {
-      background: linear-gradient(90deg, rgba(0, 67, 139, 0.06), transparent);
+      background: linear-gradient(90deg, rgba(0, 67, 139, 0.314), transparent);
       border-radius: calc(var(--radius) * .8);
       box-shadow: 0 6px 30px rgba(11,17,24,0.04);
       padding: 2rem;
-    }
+      color: #fff;
+    }.hero strong, .hero p {color: #fff;}
+    .hero h1{text-shadow: var(--textop) 1px 1px;}
     .card { border: none; border-radius: .85rem; background: var(--card); box-shadow: 0 6px 20px rgba(11,17,24,0.04); }
     .badge-price { background: rgba(0, 76, 139, 0.07); color: var(--brand); padding: .4rem .6rem; font-weight:700; border-radius:.5rem; }
     .theme-toggle { width:46px; height:46px; display:inline-flex; align-items:center; justify-content:center; border-radius:.75rem; border:1px solid rgba(0,0,0,0.05); }
@@ -164,7 +170,7 @@ document.addEventListener("scroll", function () {
 <nav class="navbar navbar-expand-lg fixed-top navbar-light py-3">
   <div class="container">
     <a class="navbar-brand d-flex align-items-center gap-2" href="#">
-      <img src="https://academy.webaon.com/webaon_academy_logo.png" alt="Webaon Academy logo" height="42">
+      <img src="https://academy.webaon.com/webaon_academy_logo_just.png" alt="Webaon Academy logo" height="72">
       <span class="fw-bold">Webaon Academy</span>
     </a>
 
@@ -186,10 +192,9 @@ document.addEventListener("scroll", function () {
     </div>
   </div>
 </nav>
-
-<br><br>
   <!-- Main -->
-  <main>
+  <main  style="background-image: url(https://academy.webaon.com/bg1_academy_webaon.png); background-repeat: no-repeat;">
+    <br><br><br><br><br><br><br><br>
     <!-- Hero -->
     <section class="container-narrow py-5">
       <div class="row g-4 align-items-center">
@@ -200,11 +205,11 @@ document.addEventListener("scroll", function () {
 
             <div class="d-flex gap-2 flex-wrap mb-3">
               <a href="#programs" class="btn btn-primary btn-lg">View Programs</a>
-              <a href="#contact" class="btn btn-outline-secondary btn-lg">Request Call Back</a>
-              <a href="#internship" class="btn btn-link small-muted">Learn about internships →</a>
+              <a href="#contact" class="btn btn-outline-light btn-lg">Request Call Back</a>
+              <a href="#internship" class="btn btn-link small-muted  text-white">Learn about internships →</a>
             </div>
 
-            <div class="small-muted">
+            <div class="small-muted  text-white">
               <strong>Device requirement:</strong> Laptop or desktop with stable internet. Classes recorded for learners who need catch-up.
             </div>
           </div>
@@ -227,7 +232,7 @@ document.addEventListener("scroll", function () {
         </div>
       </div>
     </section>
-
+    <br><br><br><br><br><br><br><br><br><br><br><br>
     <!-- Programs Grid -->
     <section id="programs" class="container-narrow py-5">
       <div class="d-flex justify-content-between align-items-center mb-4">
