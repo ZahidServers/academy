@@ -18,7 +18,7 @@
   <meta property="og:image" content="https://academy.webaon.com/office_webaon_4.png" />
 
   <!-- Favicons placeholder -->
-  <link rel="icon" href="/favicon.ico" />
+  <link rel="icon" href="https://academy.webaon.com/webaon_academy_logo_only.png" />
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
@@ -172,18 +172,62 @@
 display: none;
 }
 .decor-underline{display:inline-block;height:8px;width:64px;border-radius:8px;background:linear-gradient(90deg,var(--primary),var(--accent));vertical-align:middle;margin-left:12px}
-  </style>
-  <script>
-document.addEventListener("scroll", function () {
-  const nav = document.querySelector(".navbar");
-  if (window.scrollY > 40) {
-    nav.classList.add("scrolled");
-  } else {
-    nav.classList.remove("scrolled");
-  }
-});
+.navbar.expanded-top {
+  background: linear-gradient(90deg, #1d7cf091, #0057b3aa); /* your logo color */
+  box-shadow: 0 2px 10px rgba(0,0,0,.08);
+}
+#faq .accordion-button {
+  font-weight: 500;
+}
+#faq .accordion-button:not(.collapsed) {
+  color: var(--primary);
+  background-color: rgba(139,0,0,.05);
+}
+#testimonials .card {
+  transition: transform .3s, box-shadow .3s;
+  border-radius: .75rem;
+}
+#testimonials .card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,.06);
+}
+#testimonials img {
+  object-fit: cover;
+}
 
-</script>
+  </style>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const navbar = document.querySelector(".navbar");
+    const collapse = document.querySelector(".navbar-collapse");
+  
+    function updateNavbarState() {
+      const isScrolled = window.scrollY > 40;
+      const isExpanded = collapse.classList.contains("show");
+  
+      if (isScrolled) {
+        navbar.classList.add("scrolled");
+        navbar.classList.remove("expanded-top");
+      } else {
+        navbar.classList.remove("scrolled");
+  
+        if (isExpanded) {
+          navbar.classList.add("expanded-top");
+        } else {
+          navbar.classList.remove("expanded-top");
+        }
+      }
+    }
+  
+    // Scroll and resize listeners
+    document.addEventListener("scroll", updateNavbarState);
+    window.addEventListener("resize", updateNavbarState);
+  
+    // Bootstrap collapse events
+    collapse.addEventListener("shown.bs.collapse", updateNavbarState);
+    collapse.addEventListener("hidden.bs.collapse", updateNavbarState);
+  });
+  </script>  
 
 </head>
 <body data-bs-theme="light"  style="width: 100%; overflow-x: hidden;">
@@ -254,9 +298,33 @@ document.addEventListener("scroll", function () {
         </div>
       </div>
     </section>
-    <br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br>
+    <!-- Stats / Metrics Section -->
+    <section id="stats" style="overflow-x: hidden; -ms-overflow-style: none; scrollbar-width: none;" class="py-5 bg-light"><br>
+      <div class="container">
+        <div class="row text-center">
+          <div class="col-md-3 mb-4" data-aos="fade-up">
+            <h2 class="fw-bold"><span class="counter" data-count="10">0</span>+</h2>
+            <p class="small text-muted">Industry-Ready Programs</p>
+          </div>
+          <div class="col-md-3 mb-4" data-aos="fade-up" data-aos-delay="100">
+            <h2 class="fw-bold"><span class="counter" data-count="100">0</span>%</h2>
+            <p class="small text-muted">Remote Internships</p>
+          </div>
+          <div class="col-md-3 mb-4" data-aos="fade-up" data-aos-delay="200">
+            <h2 class="fw-bold"><span class="counter" data-count="200">0</span>+</h2>
+            <p class="small text-muted">Capstone Projects Completed</p>
+          </div>
+          <div class="col-md-3 mb-4" data-aos="fade-up" data-aos-delay="300">
+            <h2 class="fw-bold"><span class="counter" data-count="97.6">0</span>%</h2>
+            <p class="small text-muted">Student Satisfaction</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Programs Grid -->
-    <section id="programs" class="container-narrow py-5"  style="overflow-x: hidden; -ms-overflow-style: none; scrollbar-width: none;">
+    <section id="programs" class="container-narrow py-5"  style="overflow-x: hidden; -ms-overflow-style: none; scrollbar-width: none;"><br>
         <div class="program-header d-flex flex-wrap justify-content-between align-items-center mb-4">
             <h2 class="h4 mb-2 mb-md-0">Programs <span class="decor-underline"></span></h2>
             <div class="small-muted filter-pills d-flex flex-wrap gap-2">
@@ -309,8 +377,8 @@ document.addEventListener("scroll", function () {
           <article class="card h-100">
             <div class="card-body d-flex flex-column">
               <h5 class="card-title">Web Development (Python)</h5>
-              <p class="small-muted mb-2">Django/Flask, REST APIs, PostgreSQL/MySQL, Docker, Git, HTML/CSS/JS, Bootstrap 5.</p>
-              <div class="small-muted mb-3">Covers MongoDB, Postman, Docker, Three.js intro, GitHub & deployment workflows.</div>
+              <p class="small-muted mb-2">Django, Flask, REST APIs, PostgreSQL, MySQL, Docker, Git, HTML/CSS/JS, jQuery, Bootstrap 5.</p>
+              <div class="small-muted mb-3">Covers MongoDB, Postman, Docker, Three.js intro, Socket.io, GitHub & deployment workflows.</div>
               <div class="mt-auto d-flex justify-content-between align-items-center">
                 <span class="badge-price">₹25,000</span>
                 <a class="btn btn-outline-primary btn-sm" href="#contact">Details</a>
@@ -324,8 +392,8 @@ document.addEventListener("scroll", function () {
           <article class="card h-100">
             <div class="card-body d-flex flex-column">
               <h5 class="card-title">Web Development (Node.js)</h5>
-              <p class="small-muted mb-2">Express, Node.js, MongoDB/Postgres, Docker, Git, modern JS tooling & deployment.</p>
-              <div class="small-muted mb-3">Includes Postman, Docker, HTML/CSS/JS, Bootstrap 5, GitHub, Three.js basics.</div>
+              <p class="small-muted mb-2">Express, Node.js, Axios, MongoDB/Postgres, Docker, Git, modern JS tooling & deployment.</p>
+              <div class="small-muted mb-3">Includes Postman, Docker, HTML/CSS/JS, Bootstrap 5, GitHub, Socket.io, Three.js basics.</div>
               <div class="mt-auto d-flex justify-content-between align-items-center">
                 <span class="badge-price">₹25,000</span>
                 <a class="btn btn-outline-primary btn-sm" href="#contact">Details</a>
@@ -490,6 +558,9 @@ document.addEventListener("scroll", function () {
     <!-- Partners (Swiper) -->
     <section style="overflow-x: hidden; -ms-overflow-style: none; scrollbar-width: none;" class="container-narrow py-5">
       <h3 class="mb-3">Our Internships Partners <span class="decor-underline"></span></h3>
+      <p class="small text-muted mb-5" data-aos="fade-up" data-aos-delay="50">
+        We collaborate with leading companies and sister organisations to offer guaranteed remote internships.
+      </p>
       <div class="swiper-container" data-aos="fade-up">
         <div class="swiper-wrapper">
           <!-- Replace these with real partner logos -->
@@ -498,22 +569,191 @@ document.addEventListener("scroll", function () {
           <div class="swiper-slide card p-3 d-flex align-items-center justify-content-center"><img style="background-color: black;border-radius: 50px;" src="https://xdn.blinkstore.in/uploads/store/n9p5mum081o.png" height="100" alt="Partner 3" loading="lazy"></div>
           <div class="swiper-slide card p-3 d-flex align-items-center justify-content-center"><img style="background-color: black;border-radius: 10px;" src="https://academy.webaon.com/zahidservers.png" height="100" alt="Partner 4" loading="lazy"></div>
           <div class="swiper-slide card p-3 d-flex align-items-center justify-content-center"><img src="https://delta-electric.in/assets/img/favicon.png" height="100" alt="Partner 5" loading="lazy"></div>
+          <div class="swiper-slide card p-3 d-flex align-items-center justify-content-center"><img src="https://academy.webaon.com/webaon_academy_logo_only.png" height="100" alt="Partner 6" loading="lazy"></div>
+          <div class="swiper-slide card p-3 d-flex align-items-center justify-content-center"><img src="https://img.itch.zone/aW1nLzU5MjE5MzYucG5n/original/Ax490H.png" height="100" alt="Partner 7" loading="lazy"></div>
         </div>
       </div>
     </section>
 
-    <!--  Testimonials (Swiper) -->
-    <section style="overflow-x: hidden; -ms-overflow-style: none; scrollbar-width: none;" class="container-narrow py-5">
-        <h3 class="mb-3">Our Alumni <span class="decor-underline"></span></h3>
-        <div class="swiper-container" data-aos="fade-up">
-        <div class="swiper-wrapper">
-            <!-- Replace these with real partner logos -->
-            <div class="swiper-slide card p-3 d-flex align-items-center justify-content-center"><img src="https://via.placeholder.com/140x60?text=Alumni+1" alt="Alumni 1" loading="lazy"></div>
-            <div class="swiper-slide card p-3 d-flex align-items-center justify-content-center"><img src="https://via.placeholder.com/140x60?text=Alumni+2" alt="Alumni 2" loading="lazy"></div>
-            <div class="swiper-slide card p-3 d-flex align-items-center justify-content-center"><img src="https://via.placeholder.com/140x60?text=Alumni+3" alt="Alumni 3" loading="lazy"></div>
-            <div class="swiper-slide card p-3 d-flex align-items-center justify-content-center"><img src="https://via.placeholder.com/140x60?text=Alumni+4" alt="Alumni 4" loading="lazy"></div>
+    <!-- Testimonials Section -->
+    <section id="testimonials" style="overflow-x: hidden; -ms-overflow-style: none; scrollbar-width: none;" class="py-5 bg-light">
+      <div class="container">
+        <h2 class="mb-4 text-center" data-aos="fade-up">Our Alumni</h2>
+        <p class="text-center small text-muted mb-5" data-aos="fade-up" data-aos-delay="50">
+          Hear from students who completed our programs and internships.
+        </p>
+
+        <div class="swiper-container" data-aos="fade-up" data-aos-delay="100">
+          <div class="swiper-wrapper">
+
+            <!-- Testimonial 1 -->
+            <div class="swiper-slide">
+              <div class="card p-4 h-100 text-center">
+                <img src="https://via.placeholder.com/100x100?text=Photo1" class="rounded-circle mx-auto mb-3" width="100" height="100" alt="Alumni 1">
+                <p class="small mb-2">“Webaon Academy’s Kotlin course was life-changing. I built real apps and landed an internship at Webaon’s sister company.”</p>
+                <div class="fw-bold">Aisha Khan</div>
+                <div class="small text-muted">Android Developer Intern</div>
+              </div>
+            </div>
+
+            <!-- Testimonial 2 -->
+            <div class="swiper-slide">
+              <div class="card p-4 h-100 text-center">
+                <img src="https://via.placeholder.com/100x100?text=Photo2" class="rounded-circle mx-auto mb-3" width="100" height="100" alt="Alumni 2">
+                <p class="small mb-2">“The Web Development (Python) program gave me full-stack skills. My capstone project got me noticed by a partner company.”</p>
+                <div class="fw-bold">Rahul Sharma</div>
+                <div class="small text-muted">Full-Stack Developer Intern</div>
+              </div>
+            </div>
+
+            <!-- Testimonial 3 -->
+            <div class="swiper-slide">
+              <div class="card p-4 h-100 text-center">
+                <img src="https://via.placeholder.com/100x100?text=Photo3" class="rounded-circle mx-auto mb-3" width="100" height="100" alt="Alumni 3">
+                <p class="small mb-2">“TinyML at Webaon Academy introduced me to embedded AI. The internship and mentor support were excellent.”</p>
+                <div class="fw-bold">Maria Fernandes</div>
+                <div class="small text-muted">Embedded ML Intern</div>
+              </div>
+            </div>
+
+            <!-- Testimonial 4 -->
+            <div class="swiper-slide">
+              <div class="card p-4 h-100 text-center">
+                <img src="https://via.placeholder.com/100x100?text=Photo4" class="rounded-circle mx-auto mb-3" width="100" height="100" alt="Alumni 4">
+                <p class="small mb-2">“Loved the flexibility and remote internship options. Perfect for working professionals.”</p>
+                <div class="fw-bold">Imran Sheikh</div>
+                <div class="small text-muted">RPA Engineer Intern</div>
+              </div>
+            </div>
+
+          </div>
         </div>
+      </div>
+    </section>
+    
+    <!-- FAQ Section -->
+    <section id="faq" style="overflow-x: hidden; -ms-overflow-style: none; scrollbar-width: none;" class="py-5 bg-light">
+      <div class="container">
+        <h2 class="mb-4 text-center" data-aos="fade-up">Frequently Asked Questions</h2>
+        <div class="accordion" id="faqAccordion">
+
+          <div class="accordion-item" data-aos="fade-up" data-aos-delay="50">
+            <h2 class="accordion-header" id="headingOne">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                How are internships guaranteed?
+              </button>
+            </h2>
+            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
+              <div class="accordion-body small">
+                Every student who completes a program is offered a remote internship with Webaon, its subsidiaries, sister or partner companies. Roles are flexible and may be aligned with the course taken.
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item" data-aos="fade-up" data-aos-delay="100">
+            <h2 class="accordion-header" id="headingTwo">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                What is the class schedule like?
+              </button>
+            </h2>
+            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
+              <div class="accordion-body small">
+                Classes are live on Microsoft Teams or Zoom. Students can choose how many hours per day they want to learn; instructors adjust accordingly. Recordings are provided.
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item" data-aos="fade-up" data-aos-delay="150">
+            <h2 class="accordion-header" id="headingThree">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                Do you provide certificates?
+              </button>
+            </h2>
+            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
+              <div class="accordion-body small">
+                Yes. All students receive Course Completion, Attendance and Capstone Project certificates. Students who also do an internship get an Internship Completion Certificate, a Letter of Recommendation, and a Performance Certificate.
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item" data-aos="fade-up" data-aos-delay="200">
+            <h2 class="accordion-header" id="headingFour">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                Do I need special equipment?
+              </button>
+            </h2>
+            <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#faqAccordion">
+              <div class="accordion-body small">
+                You only need a laptop or desktop with a stable internet connection. All software required will be provided or explained by the instructor. TinyML Course being exception you will need to purchase its kit from link provided by our instructor.
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item" data-aos="fade-up" data-aos-delay="250">
+            <h2 class="accordion-header" id="headingFive">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                How long are the programs?
+              </button>
+            </h2>
+            <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#faqAccordion">
+              <div class="accordion-body small">
+                Program durations vary depending on the course and your selected pace. Typical completion times range from 4–16 weeks, but you can spread learning hours across days or weekends as needed.
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item" data-aos="fade-up" data-aos-delay="300">
+            <h2 class="accordion-header" id="headingSix">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                Are there any prerequisites?
+              </button>
+            </h2>
+            <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix" data-bs-parent="#faqAccordion">
+              <div class="accordion-body small">
+                Most programs are beginner-friendly and start from fundamentals. Some advanced programs (TinyML, DApps Development) may recommend prior programming knowledge, which will be mentioned on each course page.
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item" data-aos="fade-up" data-aos-delay="350">
+            <h2 class="accordion-header" id="headingSeven">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+                Do you offer payment plans or discounts?
+              </button>
+            </h2>
+            <div id="collapseSeven" class="accordion-collapse collapse" aria-labelledby="headingSeven" data-bs-parent="#faqAccordion">
+              <div class="accordion-body small">
+                Yes. Webaon Academy offers installment plans and occasional early-bird discounts. Contact our admissions team for details on payment options and scholarship opportunities.
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item" data-aos="fade-up" data-aos-delay="400">
+            <h2 class="accordion-header" id="headingEight">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
+                Can I skip the internship?
+              </button>
+            </h2>
+            <div id="collapseEight" class="accordion-collapse collapse" aria-labelledby="headingEight" data-bs-parent="#faqAccordion">
+              <div class="accordion-body small">
+                Yes, internships are optional but recommended. If you skip the internship, you still receive the standard three certificates. Completing an internship adds three additional credentials and a letter of recommendation.
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item" data-aos="fade-up" data-aos-delay="450">
+            <h2 class="accordion-header" id="headingNine">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseNine" aria-expanded="false" aria-controls="collapseNine">
+                How do I get support during the program?
+              </button>
+            </h2>
+            <div id="collapseNine" class="accordion-collapse collapse" aria-labelledby="headingNine" data-bs-parent="#faqAccordion">
+              <div class="accordion-body small">
+                Each student is assigned an instructor/mentor. You can ask questions during live classes, on the course forum, or via email. Dedicated support channels are also available for technical issues.
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Lead capture (SheetMonkey) -->
@@ -612,6 +852,9 @@ document.addEventListener("scroll", function () {
     </div>
 
     <div class="text-center small-muted mt-4">© <span id="year"></span> Webaon Academy — academy.webaon.com • All rights reserved.</div>
+    <div class="d-flex justify-content-center">
+      <img src="https://academy.webaon.com/webaon_academy_logo_only.png" height="100" alt="Partner 6" loading="lazy">
+    </div>
     <br><br><br><br><br><br>
   </footer>
   <div id="logomotion" style="position:fixed;bottom:0;left:1px;width: 70px;height: 70px; z-index: 996;"></div>
@@ -733,7 +976,7 @@ document.addEventListener('DOMContentLoaded', () => {
       anime({
         targets: link.querySelector('.nav-underline'), // pseudo-element can't be targeted directly
         width: '100%',
-        duration: 500,
+        duration: 400,
         easing: 'easeOutQuad'
       });
     });
@@ -742,7 +985,7 @@ document.addEventListener('DOMContentLoaded', () => {
       anime({
         targets: link.querySelector('.nav-underline'),
         width: '0%',
-        duration: 400,
+        duration: 200,
         easing: 'easeInQuad'
       });
     });
@@ -796,7 +1039,7 @@ document.addEventListener('DOMContentLoaded', function(){
   // underline grow
   document.querySelectorAll('.decor-underline').forEach((el, i) => {
     el.style.width = '0px';
-    anime({ targets: el, width: ['0px','64px'], duration: 900, delay: 180 + i*60, easing: 'easeOutQuad' });
+    anime({ targets: el, width: ['0px','64px'], duration: 950, delay: 190 + i*60, easing: 'easeOutQuad' });
   });
   // CTA gentle loop
   anime({ targets: '[data-anim="cta"]', scale: [1, 1.02, 1], duration: 2000, easing: 'easeInOutSine', loop: true });
@@ -856,7 +1099,7 @@ el.style.transform = 'translateY(0)';
       targets: el,
       opacity: [1, 0],
       translateY: [0, -20],
-      duration: 600,
+      duration: 400,
       easing: 'easeOutQuad'
     });
   }
@@ -866,7 +1109,6 @@ el.style.transform = 'translateY(0)';
   }, { threshold: 0.6 }); // Trigger when 60% visible
   document.querySelectorAll('.decor-underline, [data-count]').forEach(el => observer.observe(el));
   anime({ targets: '[data-anim="cta"]', scale: [1, 1.02, 1], duration: 2000, easing: 'easeInOutSine', loop: true });
-  anime.remove(el);
 });
   </script>
 </body>
